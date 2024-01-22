@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div[class^="cl-internal"]:has(a){
+  display: none !important;
+}
+
+.card.image-full:before {
+  @apply opacity-20
+}
+.container-m {
+  @apply container mx-auto px-4
+}
+
