@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import Rating from './Rating'
-import ProductRAP from './ProductRAP'
 import Price from './Price'
+import Rating from './Rating';
 
 export default function ProductBestSeller({image}:{image: any}) {
   return (
@@ -15,11 +14,11 @@ export default function ProductBestSeller({image}:{image: any}) {
             <div className='flex'>
               <p className='text-sm line-clamp-2 pe-2'>Click Click the button to w app.</p>
               <div>
-                <Price />
+                <Price price={200} />
               </div>
             </div>
             <div className="card-actions w-full">
-              <ProductRAP num={4}/>
+              <Rating rate={2.5} />
             </div>
         </div>
     </a>

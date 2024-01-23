@@ -9,10 +9,4 @@ function Card({children, className}: DefaultComponentType) {
   )
 }
 
-Card.CardBody = ({children, className}: DefaultComponentType) => (
-  <div className={`card-body ${className}`}>
-    {children}
-  </div>
-)
-
 export default Card

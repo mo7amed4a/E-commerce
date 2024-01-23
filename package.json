@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.3",
+    "@uiw/react-markdown-preview": "^5.0.7",
     "axios": "^1.6.5",
     "next": "14.0.4",
     "react": "^18",
