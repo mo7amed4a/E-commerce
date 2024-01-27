@@ -2,12 +2,8 @@
 import Card from '../../global/Card'
 import MarkdownPreview from '@uiw/react-markdown-preview';
 
-export default function ProductDescriptionCard() {
-  const source = `
-## Product Description Card
-
-> todo: React component preview markdown text.
-`;
+export default function ProductDescriptionCard({description}: {description: string}) {
+  const source = `## Product Description \n ${description}`;
   return (
     <Card className="border mt-5">
       <div className="card-body">

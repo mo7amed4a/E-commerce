@@ -2,10 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import Price from './Price'
 import Rating from './Rating';
+import Link from 'next/link';
 
 export default function ProductBestSeller({image}:{image: any}) {
   return (
-    <a href='#' className="card card-side mx-2 h-24 items-center shadow bg-base-100">
+    <Link href='/product-details/5' className="card card-side mx-2 h-24 items-center shadow bg-base-100">
         <figure className='w-0 h-0 xl:w-24 xl:h-24'>
           <Image className='h-full w-full object-fill' width={200} height={200} src={`/images/${image}.jpg`} alt="Movie"/>
         </figure>
@@ -21,6 +22,6 @@ export default function ProductBestSeller({image}:{image: any}) {
               <Rating rate={2.5} />
             </div>
         </div>
-    </a>
+    </Link>
   )
 }

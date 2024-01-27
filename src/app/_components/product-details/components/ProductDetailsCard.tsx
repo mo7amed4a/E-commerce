@@ -4,33 +4,34 @@ import IcrAndDec from './IcrAndDec';
 import Rating from '../../Home/components/Rating';
 import ProductImages from './ProductImages';
 import Price from '../../Home/components/Price';
+import { productType } from '@/types';
 
-export default function ProductDetailsCard() {
+export default function ProductDetailsCard({product}: {product: productType}) {
   return (
     <Card className="border mt-5">
       <div className="card-body p-4">
         <div className="flex flex-col lg:flex-row gap-5">
-          <ProductImages images={[{src:'/images/jacket-2.jpg', alt: 'kdl'},{src:'/images/jacket-4.jpg', alt: 'kdl'},{src:'/images/shoe-2_1.jpg', alt: 'kdl'},{src:'/images/watch-4.jpg', alt: 'watch'},{src:'/images/jacket-4.jpg', alt: 'kdl'}]}/>
+          <ProductImages images={product.attributes.banner.data}/>
           <main className="space-y-4">
             <div>
-              <h2 className="text-lg font-bold">{'Huawei P30'}</h2>
+              <h2 className="text-lg font-bold">{product.attributes.title}</h2>
               <p>
                 <span>Brand: </span>
-                <span className="link link-primary">Huawei</span>
+                <span className="link link-primary">{product.attributes.category.data.attributes.name}</span>
               </p>
               <p>
                 <span className="text-base-content/50">32 In Stock</span>
               </p>
             </div>
             <div>
-              <Price price={45} size='lg' discount={4}/>
+              <Price price={product.attributes.price} size='lg' discount={product.attributes.discount}/>
               <div className="space-x-2 flex items-center">
-                <Rating rate={4.5} className="rating-sm"/>
+                <Rating rate={product.attributes.rating} className="rating-sm"/>
                 <span className="text-success">Free shopping</span>
               </div>
             </div>
             <div>
-              <p className="md:w-3/4">Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.</p>
+              <p className="md:w-3/4">{product.attributes.smallDescription}</p>
             </div>
             <IcrAndDec />
             <div className="flex space-x-2">

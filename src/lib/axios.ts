@@ -6,7 +6,7 @@ const apiKey = process.env.NEXT_PUBLIC_API_KEY
 
 
 const customAxios = axios.create({
-    baseURL,
+    baseURL: baseURL + '/api',
     // headers: {
     //     Authorization: `Bearer ${apiKey}`
     // }

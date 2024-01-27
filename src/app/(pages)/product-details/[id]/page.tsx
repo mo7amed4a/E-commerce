@@ -2,9 +2,11 @@ import ProductDetailsSection from "@/app/_components/product-details/sections/Pr
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
 export default function page({params}: {params: Params}) {
+  
+
   return (
     <main className="container-m">
-        <ProductDetailsSection />
+        <ProductDetailsSection id={params.id}/>
     </main>
   )
 }

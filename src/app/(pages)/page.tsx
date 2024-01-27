@@ -1,5 +1,4 @@
 import Slider from '../_components/Home/sections/Slider';
-import ProductBestSeller from '../_components/Home/components/ProductBestSeller';
 import CategorySection from '../_components/Home/sections/CategorySection';
 import SidebarMenu from '../_components/Home/sections/SidebarMenu';
 import ProductsSection from '../_components/Home/sections/ProductsSection';
