@@ -11,19 +11,18 @@ const CheckoutForm = () => {
   const elements = useElements();
   const [loading, setLoading] = useState<boolean>(true)
   const [errorMessage, setErrorMessage] = useState<any>()
-
   const {user} = useUser();
   const [cartItems, setCartItems] = useState<CartItemsType | null>(null)
   async function getItems() {
     if (user) {
-      const cartItems: CartItemsType = await getCartItems(user?.primaryEmailAddress?.emailAddress || 'mo7ame66d@gmail.com')
+      const cartItems: CartItemsType = await getCartItems(user?.primaryEmailAddress?.emailAddress || 'm')
       setCartItems(cartItems)      
     }
   }
   
   useEffect(() => {
     getItems();
-  }, [user])
+  }, [])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
