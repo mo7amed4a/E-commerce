@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Header from './_components/layouts/header/Header'
-import Footer from './_components/layouts/footer/Footer'
+import Header from '../components/layouts/header/Header'
+import Footer from '../components/layouts/footer/Footer'
+import { ClerkProvider } from '@clerk/nextjs'
  
 export const metadata: Metadata = {
   title: 'App',
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // <ClerkProvider>
+    <ClerkProvider>
       <html lang="en">
         <body className='bg-base-200/50'>
           <Header />
@@ -23,7 +24,7 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    // </ClerkProvider>
+   </ClerkProvider>
   )
 }
 

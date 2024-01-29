@@ -40,7 +40,7 @@ export type productType = {
     attributes: {
         title: string
         description: string
-        smallDescription: string
+        // smallDescription: string
         price: number
         createdAt: string
         updatedAt: string
@@ -49,5 +49,17 @@ export type productType = {
         rating: number
         banner: {data: ImageType[]}
         category: {data : CategoryType}
+    }
+}
+
+export type CartType = {
+    id: number
+    attributes: {
+        email: string
+        username: string
+        createdAt: string
+        updatedAt: string
+        publishedAt: string
+        products: {data : productType[]}
     }
 }
