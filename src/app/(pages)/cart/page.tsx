@@ -10,7 +10,7 @@ import Link from 'next/link';
 export type CartItemsType = {data: {data: CartType[]}}
 
 export function totalPrice(cartItems : CartItemsType){
-  if (cartItems && cartItems?.data.data.length > 0) {
+  if (cartItems?.data.data.length > 0) {
     const total =  cartItems.data.data.reduce((accumulator, currentValue) => {
       const price = currentValue.attributes.products.data[0].attributes.price;
       const disCount = currentValue.attributes.products.data[0].attributes.discount;
