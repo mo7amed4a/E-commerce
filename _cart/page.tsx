@@ -3,14 +3,14 @@ import { getCartItems } from '@/data/cart'
 import { CartType } from '@/types';
 import { useUser } from '@clerk/nextjs';
 import React, { useEffect, useState } from 'react'
-import { disCountFun } from '../(Home)/_components/Price';
-import Product from '../(Home)/_components/Product';
+import { disCountFun } from '../src/app/(pages)/(Home)/_components/Price';
+import Product from '../src/app/(pages)/(Home)/_components/Product';
 import Link from 'next/link';
 
 export type CartItemsType = {data: {data: CartType[]}}
 
 export function totalPrice(cartItems : CartItemsType){
-  if (cartItems?.data.data.length > 0) {
+  if (cartItems && cartItems?.data.data.length > 0) {
     const total =  cartItems.data.data.reduce((accumulator, currentValue) => {
       const price = currentValue.attributes.products.data[0].attributes.price;
       const disCount = currentValue.attributes.products.data[0].attributes.discount;
@@ -49,7 +49,7 @@ export default function cart() {
               <div className='flex space-x-2 items-center'>
                 <span>Count :</span>
                 <span>{cartItems.data.data.length} Product</span>
-              </div>
+              </div> 
             </div>}
             <Link href={`/checkout`} className='btn btn-primary'>Checkout</Link>
           </div>

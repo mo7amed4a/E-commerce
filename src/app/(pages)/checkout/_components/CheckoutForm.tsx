@@ -4,7 +4,7 @@ import {PaymentElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import { StripeError } from '@stripe/stripe-js';
 import axios from 'axios';
 import { FormEvent, useEffect, useState } from 'react';
-import { CartItemsType, totalPrice } from '../../cart/page';
+import { CartItemsType, totalPrice } from '../../../../../_cart/page';
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -21,7 +21,7 @@ const CheckoutForm = () => {
   }
   
   useEffect(() => {
-    getItems();
+    // getItems();
   }, [])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement> ) => {
