@@ -1,10 +1,12 @@
-import { getCartItems } from '@/data/cart';
+'use client'
+import { getCartItems, getCartItemsTwo } from '@/data/cart';
 import { useUser } from '@clerk/nextjs';
 import {PaymentElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import { StripeError } from '@stripe/stripe-js';
 import axios from 'axios';
 import { FormEvent, useEffect, useState } from 'react';
-import { CartItemsType, totalPrice } from '../../../../../_cart/page';
+import { CartItemsType } from '../../cart/page';
+import { totalPrice } from '../../cart/_components/Cart';
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -15,13 +17,13 @@ const CheckoutForm = () => {
   const [cartItems, setCartItems] = useState<CartItemsType | null>(null)
   async function getItems() {
     if (user) {
-      const cartItems: CartItemsType = await getCartItems(user?.primaryEmailAddress?.emailAddress || 'm')
+      const cartItems: CartItemsType = await getCartItemsTwo(user?.primaryEmailAddressId || 'm')
       setCartItems(cartItems)      
     }
   }
   
   useEffect(() => {
-    // getItems();
+    getItems();
   }, [])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement> ) => {

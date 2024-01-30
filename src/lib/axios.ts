@@ -10,10 +10,7 @@ const customAxios = axios.create({
 })
 
 export const customAxiosWithToken = axios.create({
-    baseURL: baseTwoURL + '/api',
-    headers: {
-        Authorization: `Bearer ${apiKey}`
-    }
+    baseURL: baseTwoURL + '/api'
 })
 
 

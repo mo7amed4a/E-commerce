@@ -7,7 +7,7 @@ import { productType } from '@/types'
 import AddToCart from './AddToCart'
 import Card from '@/components/global/Card'
 
-export default function Product({product, idItemInCart, setRefreshItems}: {product: productType, idItemInCart?: number, setRefreshItems?: React.Dispatch<React.SetStateAction<boolean>>}) {
+export default function Product({product, idItemInCart}: {product: productType, idItemInCart?: number}) {
   return (
     <div className='group'>
         <Card className='border w-full rounded-t-box group-hover:rounded-b-none'>
@@ -19,7 +19,7 @@ export default function Product({product, idItemInCart, setRefreshItems}: {produ
                     <Image src={product.attributes.banner.data[1]?.attributes?.url ? product.attributes.banner.data[1].attributes.url : product.attributes.banner.data[0].attributes.url } width={400} height={100} alt={product.attributes.banner.data[0].attributes.alternativeText || 'this is alt'} className='hidden group-hover:block duration-300' />
                     <Image src={product.attributes.banner.data[0].attributes.url} width={400} height={100} alt='category' className='group-hover:hidden duration-300'/>
                 </Link>
-                <AddToCart product={product} idItemInCart={idItemInCart} setRefreshItems={setRefreshItems}/>
+                <AddToCart product={product} idItemInCart={idItemInCart}/>
             </figure>
             <div className='card-body p-4 relative rounded-b-none'>
                 <Link href={`/product-details/${product.id}`}>

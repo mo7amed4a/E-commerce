@@ -5,20 +5,21 @@ import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
-export default function AddToCart({product, idItemInCart, setRefreshItems}: {product: productType,idItemInCart: number|undefined, setRefreshItems: React.Dispatch<React.SetStateAction<boolean>> | undefined}) {
+export default function AddToCart({product, idItemInCart}: {product: productType,idItemInCart: number|undefined}) {
   const {user} = useUser();
   const router = useRouter()
   
   function addItemToCart() {
     let data = {
       data : {
-        email: user?.primaryEmailAddress?.emailAddress,
+        userId: user?.primaryEmailAddress?.id,
         username: user?.fullName,
         products: [product.id]
       }
     }
     addToCart(data).then(res => {
       router.push('/cart')
+      router.refresh()
     }).catch(err => {
       console.log("error",err);
     })
@@ -26,7 +27,7 @@ export default function AddToCart({product, idItemInCart, setRefreshItems}: {pro
   function deleteItemFromCart() {
     if (idItemInCart) {
       deleteFromCart(idItemInCart).then(res => {
-        setRefreshItems && setRefreshItems((prev) => !prev)
+        router.refresh()
       }).catch(err => {
         console.log("error",err);
       })
