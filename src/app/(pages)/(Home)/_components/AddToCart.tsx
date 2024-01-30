@@ -13,7 +13,7 @@ export default function AddToCart({product, idItemInCart}: {product: productType
     let data = {
       data : {
         userId: user?.primaryEmailAddress?.id,
-        email: user?.primaryEmailAddress?.emailAddress,
+        email: user?.primaryEmailAddress?.emailAddress, 
         username: user?.fullName,
         products: [product.id]
       }
