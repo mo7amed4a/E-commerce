@@ -33,3 +33,7 @@ div[class^="cl-internal"]:has(a){
 #side-menu-links.active {
   @apply -translate-x-0
 }
+
+.profile .cl-card {
+  @apply shadow-none px-0 mx-0 min-w-full
+}
