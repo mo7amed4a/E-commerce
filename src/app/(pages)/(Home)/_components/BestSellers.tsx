@@ -12,7 +12,7 @@ export default async function BestSellers() {
     <div className='space-y-2'>
             <h3 className='pt-2 text-lg font-bold uppercase'>{getBestSellersProducts.data.data.attributes.title}</h3>
             {getBestSellersProducts.data.data.attributes.products.data.map(product => ( 
-              <Link href={`/product-details/${product.id}`} className="card card-side mx-2 h-24 items-center shadow bg-base-100">
+              <Link key={product.id} href={`/product-details/${product.id}`} className="card card-side mx-2 h-24 items-center shadow bg-base-100">
                   <figure className='w-0 h-0 xl:w-24 xl:h-24'>
                     <Image className='h-full w-full object-fill' width={200} height={200} src={product.attributes.banner.data[0].attributes.url} alt="Movie"/>
                   </figure>
