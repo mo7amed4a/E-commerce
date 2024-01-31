@@ -25,16 +25,6 @@ export default async function Recommended({category}:{category:CategoryType}) {
             <div className="h-[60vh] flex justify-center items-center">
                 <h3 className="text-xl text-base-content/50 ">No product of category name</h3>
             </div>}
-         {/* <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/>
-         <Product num={4}/> */}
       </Card>
     </div>
   )

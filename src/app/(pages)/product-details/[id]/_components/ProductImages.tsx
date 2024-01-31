@@ -10,7 +10,7 @@ export default function ProductImages({images, isHome}: {images: ImageType[],  i
   }
   return (
     <div className="w-full md:w-[31.25rem]">
-       {imageSrc ? <Image priority={true} className={`rounded-box md:w-[500px] md:h-[500px] ${!isHome && "border"}`} src={imageSrc.attributes.url} width={500} height={400} alt={imageSrc.attributes.url + 'ddd'} /> : 
+       {imageSrc ? <Image priority={true} className={`rounded-box md:w-[500px] md:h-[500px] ${!isHome && "border"}`} src={imageSrc.attributes.url} width={500} height={400} alt={imageSrc.attributes.alternativeText || 'ddd'} /> : 
          <span className="text-xl font-bold text-base-content/50" >No Image</span>
        }
        <div className="hidden">

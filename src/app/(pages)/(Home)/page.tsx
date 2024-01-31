@@ -12,11 +12,13 @@ export default async function page() {
     <div className="container-m mt-5 space-y-5 px-4">
       <Hero />
       <CategorySection />
-      <section className='flex relative'>
+      <section className='flex lg:relative'>
         <SidebarMenu />
         <div className='lg:w-3/4 space-y-4'>
-          <h1 className='text-xl font-bold mt-2 ms-1 border-b pb-2'>{getBestSellersProduct.data.data.attributes.name}</h1>
-          <ProductDetailsCard isHome product={getBestSellersProduct.data.data.attributes.product.data}/>
+          {getBestSellersProduct.data.data.attributes.product.data && <>
+              <h1 className='text-xl font-bold mt-2 ms-1 border-b pb-2'>{getBestSellersProduct.data.data.attributes.name}</h1>
+              <ProductDetailsCard isHome product={getBestSellersProduct.data.data.attributes.product.data}/>
+            </>}
           <h1 className='text-xl font-bold mt-2 ms-1 border-b pb-2'>New Products</h1>
           <ProductsSection />
         </div>

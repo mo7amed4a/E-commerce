@@ -14,11 +14,11 @@ export default function Price({price, discount, size, className}: PriceType) {
 
   return (
     <div className={`flex items-center ${size === 'lg' ? 'space-x-2' : 'justify-between'}`}>
-      <div className="flex space-x-2 items-center">
-        <span className={`${size === 'lg' ? 'text-2xl': "text-xl"} font-bold ${className}`}>{discount ? '$'+disCountFun(price, discount) : price === 0 ? <span className="badge badge-success text-white">Free</span> : '$'+price}</span>
-        {discount > 0 && <span className="text-base-content/50 line-through">${price}</span>}
+      <div className="flex space-x-2 items-center flex-wrap">
+        <span className={`${size === 'lg' ? 'text-2xl': "text-xs md:text-xl"} font-bold ${className}`}>{discount ? '$'+disCountFun(price, discount) : price === 0 ? <span className="badge badge-success text-white">Free</span> : '$'+price}</span>
+        {discount > 0 && <span className="text-base-content/50 line-through text-xs md:text-base">${price}</span>}
       </div>
-      {discount > 0 && <span className="text-success font-medium">{discount}%</span>}
+      {discount > 0 && <span className="text-success font-medium hidden md:block">{discount}%</span>}
     </div>
   )
 }

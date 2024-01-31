@@ -3,26 +3,16 @@ import Links from '../header/Links'
 import { BestCategoriesType, CategoryType } from '@/types'
 import { bestCategories, categories } from '@/data/categories'
 import Link from 'next/link'
+import Logo from '../header/Logo'
 
 export default async function Footer() {
     let getCategories:{data: BestCategoriesType} = await bestCategories()
   return (
     <div className='bg-base-200 mt-8'>
        <footer className="footer p-10 text-base-content container-m">
-            <nav>
-                <header className="footer-title">Links</header> 
-                <ul className='[&>li]:link-hover'>
-                    <Links />
-                </ul>
-            </nav> 
-            <nav>
-                <header className="footer-title">Categories</header> 
-                {getCategories.data.data.attributes.categories.data.slice(-4).map(category => {
-                    return <Link key={category.id} href={`/category/${category.attributes.slug}`} className='link link-hover'>{category.attributes.name}</Link>
-                })}
-            </nav>
-            <nav>
-                <h6 className="footer-title">Social</h6> 
+            <nav className='w-full md:w-80'>
+                <Logo />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusamus nisi consequuntur libero illo omnis distinctio fugiat, aspernatur numquam recusandae nesciunt fugit dolore. Quo, eaque!</p>
                 <div className="grid grid-flow-col gap-4">
                     <a href='https://m-abdelrahman.vercel.app'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -34,6 +24,26 @@ export default async function Footer() {
                     </a>
                     <a href='https://www.facebook.com/m7md0a'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
                 </div>
+            </nav>
+            <nav>
+                <header className="footer-title">Links</header> 
+                <ul className='[&>li>a]:link [&>li>a]:link-hover space-y-1'>
+                    <Links />
+                </ul>
+            </nav>
+            <nav>
+                <header className="footer-title">Categories</header> 
+                {getCategories.data.data.attributes.categories.data.slice(-4).map(category => {
+                    return <Link key={category.id} href={`/category/${category.attributes.slug}`} className='link link-hover'>{category.attributes.name}</Link>
+                })}
+            </nav>
+            <nav>
+                <header className="footer-title">Contact Us</header> 
+                <ul className='[&>li>a]:link [&>li>a]:link-hover space-y-1'>
+                    <li><a href="mailto:a@gmail.com">a@gmail.com</a></li>
+                    <li><a href="tel:0123456789">0123456789</a></li>
+                </ul>
+                <p>213 Lane, London, United Kingdom</p>
             </nav>
         </footer> 
         <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300 container-m">

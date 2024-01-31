@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --p : 49.33% 0.163 265.76
+}
+
 div[class^="cl-internal"]:has(a){
   display: none !important;
 }
@@ -13,3 +18,18 @@ div[class^="cl-internal"]:has(a){
   @apply container mx-auto px-4
 }
 
+#sideNav {
+  @apply h-full w-4/5 lg:w-1/4 top-0 left-0 p-2 space-y-4 fixed lg:sticky bg-base-100 z-40 -translate-x-full lg:-translate-x-0 shadow lg:shadow-none duration-300 overflow-y-scroll lg:overflow-y-auto
+}
+
+#sideNav.active {
+  @apply -translate-x-0
+}
+
+#side-menu-links {
+  @apply w-3/4 h-screen top-0 left-0 p-2 fixed bg-base-100 z-50 shadow duration-300 -translate-x-full lg:hidden
+}
+
+#side-menu-links.active {
+  @apply -translate-x-0
+}

@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '../components/layouts/header/Header'
 import Footer from '../components/layouts/footer/Footer'
 import { ClerkProvider } from '@clerk/nextjs'
+import { useState } from 'react'
  
 export const metadata: Metadata = {
   title: 'App',
