@@ -3,9 +3,8 @@ import { addToCart, deleteFromCart } from '@/data/cart';
 import { productType } from '@/types';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
 
-export default function AddToCart({product, idItemInCart}: {product: productType,idItemInCart: number|undefined}) {
+export default function AddToCart({product, idItemInCart, className, productDetails}: {product: productType,idItemInCart: number|undefined, className?: string, productDetails?: boolean}) {
   const {user} = useUser();
   const router = useRouter()
   
@@ -13,7 +12,6 @@ export default function AddToCart({product, idItemInCart}: {product: productType
     let data = {
       data : {
         userId: user?.primaryEmailAddress?.id,
-        email: user?.primaryEmailAddress?.emailAddress, 
         username: user?.fullName,
         products: [product.id]
       }
@@ -36,17 +34,25 @@ export default function AddToCart({product, idItemInCart}: {product: productType
 }
   return (
     <div>
-      {idItemInCart ? <button className='btn btn-error btn-circle btn-sm absolute bottom-0 end-2' onClick={deleteItemFromCart}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
-          <path fillRule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.133 2.845a.75.75 0 0 1 1.06 0l1.72 1.72 1.72-1.72a.75.75 0 1 1 1.06 1.06l-1.72 1.72 1.72 1.72a.75.75 0 1 1-1.06 1.06L12 15.685l-1.72 1.72a.75.75 0 1 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
-        </svg>
-      </button>:
-      <button className='btn btn-primary btn-circle btn-sm absolute bottom-0 end-2' onClick={addItemToCart}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      {productDetails ? 
+        <button className={`btn btn-primary ${className}`} onClick={addItemToCart}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
           <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
         </svg>
-      </button>}
+          Add to Cart
+        </button>
+      :
+      idItemInCart ? <button className={`text-error hover:btn-error ${className}`} onClick={deleteItemFromCart}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+      </button>:
+      <button className={className} onClick={addItemToCart}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+      </button>
+      }
     </div>
   )
 }

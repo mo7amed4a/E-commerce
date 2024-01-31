@@ -14,3 +14,7 @@ export const productsByCategory = async (slug: string, filter?: string) => {
     }
     return await customAxios.get(`/products?populate=*&filters[$and][0][category][slug][$eq]=${slug}&${filter}`);
 }
+
+export const bestSellersProducts = async (data: "products" | "product") => {
+    return await customAxios.get(`/best-seller?populate[${data}][populate]=*`);
+}

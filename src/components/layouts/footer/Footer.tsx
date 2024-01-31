@@ -1,11 +1,11 @@
 import React from 'react'
 import Links from '../header/Links'
-import { CategoryType } from '@/types'
-import { categories } from '@/data/categories'
+import { BestCategoriesType, CategoryType } from '@/types'
+import { bestCategories, categories } from '@/data/categories'
 import Link from 'next/link'
 
 export default async function Footer() {
-  let getCategories:{data: {data: CategoryType[]}} = await categories('sort=slug:DESC&pagination[start]=0&pagination[limit]=4')
+    let getCategories:{data: BestCategoriesType} = await bestCategories()
   return (
     <div className='bg-base-200 mt-8'>
        <footer className="footer p-10 text-base-content container-m">
@@ -17,7 +17,7 @@ export default async function Footer() {
             </nav> 
             <nav>
                 <header className="footer-title">Categories</header> 
-                {getCategories.data.data.map(category => {
+                {getCategories.data.data.attributes.categories.data.slice(-4).map(category => {
                     return <Link key={category.id} href={`/category/${category.attributes.slug}`} className='link link-hover'>{category.attributes.name}</Link>
                 })}
             </nav>

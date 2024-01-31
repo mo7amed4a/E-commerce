@@ -63,3 +63,31 @@ export type CartType = {
         products: {data : productType[]}
     }
 }
+
+export type BestSellersType = {
+    data: {
+        id: number
+        attributes : {
+            title: string
+            name: string
+            createdAt: string
+            updatedAt: string
+            publishedAt: string
+            products: {data : productType[]}
+            product: {data : productType}
+        }
+    }
+}
+
+export type BestCategoriesType = {
+    data: {
+        id: number
+        attributes : {
+            title: string
+            createdAt: string
+            updatedAt: string
+            publishedAt: string
+            categories: {data : CategoryType[]}
+        }
+    }
+}
