@@ -8,6 +8,8 @@ import OpenMenuLinks from "./OpenMenuLinks"
 import BestSellerProduct from "@/app/(pages)/(Home)/_components/BestSellerProduct"
 import { BestSellersType } from "@/types"
 import { bestSellersProducts } from "@/data/products"
+import InputSearch from "./InputSearch"
+import HiddenInput from "./HiddenInput"
 
 export default async function Header() {
   let getBestSellersProduct: {data: BestSellersType} = await bestSellersProducts("product")
@@ -19,14 +21,12 @@ export default async function Header() {
           <Logo />
         </div>
         <div className="navbar-center hidden lg:flex min-w-[40rem] max-w-6xl">
-          <div className="form-control w-full">
-            <input type="text" placeholder="Search" className="input input-bordered w-full" />
-          </div>
+          <InputSearch />
         </div>
         <div className="navbar-end space-x-2">
-          <div className="form-control lg:hidden">
-            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-full" />
-          </div>
+          <HiddenInput >
+            <InputSearch mobile={true}/>
+          </HiddenInput>
           <UserButton userProfileUrl="/profile" userProfileMode="navigation" afterSignOutUrl="/"/>
         </div>
       </div>
