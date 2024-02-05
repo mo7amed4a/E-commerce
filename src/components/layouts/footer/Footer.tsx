@@ -12,7 +12,7 @@ export default async function Footer() {
        <footer className="footer p-10 text-base-content container-m">
             <nav className='w-full md:w-80'>
                 <Logo />
-                <p>ur store offers a wide range of high quality products and we strive to make your experience with us easy and enjoyable. Please feel free to browse the various sections of the store and discover a carefully curated selection of unique products.</p>
+                <p>Our store offers a wide range of high quality products and we strive to make your experience with us easy and enjoyable. Please feel free to browse the various sections of the store and discover a carefully curated selection of unique products.</p>
                 <div className="grid grid-flow-col gap-4">
                     <a href='https://m-abdelrahman.vercel.app'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
