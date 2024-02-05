@@ -1,7 +1,7 @@
 import React from 'react'
 import Links from '../header/Links'
-import { BestCategoriesType, CategoryType } from '@/types'
-import { bestCategories, categories } from '@/data/categories'
+import { BestCategoriesType } from '@/types'
+import { bestCategories } from '@/data/categories'
 import Link from 'next/link'
 import Logo from '../header/Logo'
 
@@ -12,7 +12,7 @@ export default async function Footer() {
        <footer className="footer p-10 text-base-content container-m">
             <nav className='w-full md:w-80'>
                 <Logo />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusamus nisi consequuntur libero illo omnis distinctio fugiat, aspernatur numquam recusandae nesciunt fugit dolore. Quo, eaque!</p>
+                <p>ur store offers a wide range of high quality products and we strive to make your experience with us easy and enjoyable. Please feel free to browse the various sections of the store and discover a carefully curated selection of unique products.</p>
                 <div className="grid grid-flow-col gap-4">
                     <a href='https://m-abdelrahman.vercel.app'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -40,10 +40,10 @@ export default async function Footer() {
             <nav>
                 <header className="footer-title">Contact Us</header> 
                 <ul className='[&>li>a]:link [&>li>a]:link-hover space-y-1'>
-                    <li><a href="mailto:a@gmail.com">a@gmail.com</a></li>
+                    <li><a href="mailto:a@gmail.com">mail@example.com</a></li>
                     <li><a href="tel:0123456789">0123456789</a></li>
                 </ul>
-                <p>213 Lane, London, United Kingdom</p>
+                <p>Dair-Mawas, Elminya, Egypt</p>
             </nav>
         </footer> 
         <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300 container-m">

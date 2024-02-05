@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function Hero() {
   const {user} = useUser()
   return (
-    <div className="hero min-h-96" style={{backgroundImage: 'url(/images/background-auth.avif)'}}>
+    <div className="hero min-h-96" style={{backgroundImage: 'url(/images/background.jpg)'}}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
             <div className="max-w-2xl">
