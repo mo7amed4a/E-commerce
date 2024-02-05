@@ -32,7 +32,7 @@ export default function Product({product, idItemInCart}: {product: productType, 
             <div className='card-body p-4'>
                 <Link href={`/product-details/${product.id}`}>
                     <div className="text-sm md:text-lg font-medium capitalize">
-                        <h2 className='line-clamp-2 w-full'>{product.attributes.title}</h2>
+                        <h2 className='line-clamp-1 w-full'>{product.attributes.title}</h2>
                     </div>
                 </Link>
                 <Price price={product.attributes.price} discount={product.attributes.discount} />
