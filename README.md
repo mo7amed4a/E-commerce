@@ -12,8 +12,8 @@ cd E-commerce
 # and
 npm install
 ```
-add .env.local file
-```
+- add .env.local file
+```dosini
 # clerk public key
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 # clerk secret key
