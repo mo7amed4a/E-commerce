@@ -2,7 +2,7 @@
 Technologies: nextjs, tailwindcss, daisyui, strapi, clerk, typesript
 
 ### Watch the video on YouTube
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/1qKZlmAbgjY/0.jpg)](https://www.youtube.com/watch?v=1qKZlmAbgjY)
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/m7md0a/E-commerce/main/Screenshot_20240208_105532.webp)](https://www.youtube.com/watch?v=1qKZlmAbgjY)
 
 ## Getting Started
 First, run the development server:
