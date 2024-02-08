@@ -5,7 +5,7 @@ Technologies: nextjs, tailwindcss, daisyui, strapi, clerk, typesript
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/m7md0a/E-commerce/main/Screenshot_20240208_105532.webp)](https://www.youtube.com/watch?v=1qKZlmAbgjY)
 
 ## Getting Started
-```
+```bash
 git clone https://github.com/m7md0a/E-commerce.git
 # and
 cd E-commerce
