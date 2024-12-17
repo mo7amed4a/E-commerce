@@ -41,14 +41,14 @@ export default async function Footer() {
                 <header className="footer-title">Contact Us</header> 
                 <ul className='[&>li>a]:link [&>li>a]:link-hover space-y-1'>
                     <li><a href="mailto:a@gmail.com">mail@example.com</a></li>
-                    <li><a href="tel:0123456789">0123456789</a></li>
+                    <li><a href="tel:+201156552951">01156552951</a></li>
                 </ul>
-                <p>Dair-Mawas, Elminya, Egypt</p>
+                <p>Cairo, Egypt</p>
             </nav>
         </footer> 
         <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300 container-m">
             <aside className="items-center grid-flow-col">
-                <p>Designed by <a href="https://github.com/m7md0a" className='link link-hover'>Mohamed</a></p>
+                <p>Designed by <a target='_blank' href="https:///mo7amed4a.vercel.app" className='link link-hover'>Mohamed</a></p>
             </aside> 
             <nav className="md:place-self-center md:justify-self-end">
                 <div className="grid grid-flow-col gap-4">
